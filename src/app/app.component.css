@@ -2,3 +2,13 @@ app-toolbar {
     background: var(--primary-color);
     color: var(--dark-theme-text-color);
 }
+
+app-toolbar.raised {
+    @apply(--shadow-elevation-4dp);
+}
+
+paper-icon-button {
+    position: absolute;
+    top: 12px;
+    left: 8px;
+}

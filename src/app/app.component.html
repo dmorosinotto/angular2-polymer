@@ -1,8 +1,9 @@
 <app-header-layout has-scrolling-region>
   <app-header fixed>
-    <app-toolbar>
+    <app-toolbar [class.raised]="isInChildView">
+      <paper-icon-button icon="arrow-back" *ngIf="isInChildView" (click)="goBack()"></paper-icon-button>
       <div title spacer>{{title}}</div>
     </app-toolbar>
   </app-header>
- <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </app-header-layout>
