@@ -1,5 +1,12 @@
 # Angular2Polymer
 
+Sample application built with NG2 CLI + newest Router + Polymer + Vaadin elements (grid - date picker)
+- Using angular2 polymer integration by [@vaadin/angular2-polymer](https://github.com/vaadin/angular2-polymer/blob/master/src/polymer-element.ts)
+- Inspired by this [Vaadin NG2 Tutorial](https://vaadin.com/docs/-/part/elements/angular2-polymer/tutorial-index.html) + this [Guide to use NG CLI](https://vaadin.com/docs/-/part/elements/angular2-polymer/ng-cli.html) 
+- Updated with the latest version of **NG2** (__2.0.0-rc.4__) and newest **Router** (__3.0.0-beta.1__) and 
+
+--------
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.9.
 
 ## Development server
