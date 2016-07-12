@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PolymerElement } from '@vaadin/angular2-polymer';
 import { Hero, HeroService } from '../shared';
 
@@ -6,7 +7,7 @@ import { Hero, HeroService } from '../shared';
   moduleId: module.id,
   selector: 'app-heroes',
   template: `
-    <vaadin-grid [items]="heroes">
+    <vaadin-grid [items]="heroes" (selected-items-changed)="gotoDetail($event)">
       <table>
         <colgroup>
           <col name="id">
@@ -26,7 +27,7 @@ import { Hero, HeroService } from '../shared';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
-  constructor(private svc: HeroService) {
+  constructor(private svc: HeroService, private router: Router) {
     // this.heroes = this.svc.getHeroes();
   }
 
@@ -34,4 +35,11 @@ export class HeroesComponent implements OnInit {
     this.svc.getHeroes().subscribe( data => this.heroes = data );
   }
 
+  gotoDetail(event: any) {
+    let selectedIndex = event.target.selection.selected()[0];
+    if (selectedIndex) {
+      const id = this.heroes[selectedIndex].id;
+      this.router.navigate(['/detail', id ])
+    }
+  }
 }

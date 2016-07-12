@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Hero } from './hero.ts';
 import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/observable/from';
-// import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';
 
 const HEROS: Hero[] = [
   { "id": 11,  "name": "Mr. Nice",   "birthday": "1980-01-11" },
@@ -24,16 +25,26 @@ export class HeroService {
 
   constructor() {}
 
-  getHeroes() {
+  getHeroes(): Observable<Hero[]> {
     // return HEROS;
      
-    return Observable.create(obs => {
-      obs.next(HEROS);
-      obs.complete();
-    });
-    
-    // return Observable.of(HEROS);
+    return Observable.of(HEROS);
     // return Observable.from([HEROS]);   
+  }
+
+  getHero(id: number): Observable<Hero> {
+    /*
+    return Observable.create(obs => {
+      let found = HEROS.filter(h => h.id === id);
+      if (found && found.length>0) {
+        obs.next(found[0]);
+        obs.complete(); 
+      } else {
+        obs.error(null); //NOT FOUND
+      }
+    });
+    */
+    return this.getHeroes().map(  heros => heros.find(h => h.id === id)  );
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { PolymerElement } from '@vaadin/angular2-polymer'
 
 import { HeroesComponent } from './heroes';
@@ -11,8 +12,8 @@ import { HeroesComponent } from './heroes';
   directives: [
     PolymerElement('app-header-layout'),
     PolymerElement('app-header'),
-    PolymerElement('app-toolbar')
-  ,HeroesComponent
+    PolymerElement('app-toolbar'),
+    ROUTER_DIRECTIVES
   ]
 })
 export class AppComponent {
