@@ -1,0 +1,4 @@
+app-toolbar {
+    background: var(--primary-color);
+    color: var(--dark-theme-text-color);
+}

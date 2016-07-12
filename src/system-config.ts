@@ -7,10 +7,12 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  '@vaadin': 'vendor/@vaadin'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  '@vaadin/angular2-polymer': { main: 'index.js', defaultExtension: 'js' }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
