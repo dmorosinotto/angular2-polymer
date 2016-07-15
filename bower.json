@@ -1,7 +1,7 @@
 {
   "name": "angular2-polymer",
   "description": "Seed project with NG2 CLI + Polymer + Vaadin lastest versions",
-  "main": "public/index.html",
+  "main": "dist/index.html",
   "authors": [
     "Daniele Morosinotto <d.morosinotto@icloud.com>"
   ],
@@ -11,7 +11,7 @@
     "Polymer",
     "Vaadin"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/dmorosinotto/angular2-polymer.git",
   "private": true,
   "ignore": [
     "**/.*",
